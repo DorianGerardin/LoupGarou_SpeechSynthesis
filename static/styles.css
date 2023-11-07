@@ -11,8 +11,14 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: 16px;
-    background: radial-gradient(at 18% 99%, #2c2d31 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 97% 8%, #5f7784 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 79% 82%, #525659 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 96% 10%, #e6d43a 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 42% 20%, #afa644 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 4% 49%, #20283f 0px, transparent 50%) fixed 0% 0%, rgba(0, 0, 0, 0) radial-gradient(at 57% 33%, #000000 0px, #3b5678 50%) fixed 0% 0%;
-
+    background-size: 100%;
+    background: radial-gradient(at 18% 99%, #2c2d31 0px, transparent 50%) fixed 0% 0%,
+    radial-gradient(at 97% 8%, #5f7784 0px, transparent 50%) fixed 0% 0%,
+    radial-gradient(at 79% 82%, #525659 0px, transparent 50%) fixed 0% 0%,
+    radial-gradient(at 96% 10%, #e6d43a 0px, transparent 50%) fixed 0% 0%,
+    radial-gradient(at 42% 20%, #afa644 0px, transparent 50%) fixed 0% 0%,
+    radial-gradient(at 4% 49%, #20283f 0px, transparent 50%) fixed 0% 0%,
+    rgba(0, 0, 0, 0) radial-gradient(at 57% 33%, #000000 0px, #3b5678 50%) fixed 0% 0%;
 }
 
 h1,h2,h3 {
@@ -74,7 +80,6 @@ select, textarea, button {
 
 .characterCard:hover {
     cursor: pointer;
-    scale: 1.02;
 }
 
 .characterCard.selected {
