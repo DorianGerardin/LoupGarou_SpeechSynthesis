@@ -112,8 +112,10 @@ if ('speechSynthesis' in window) {
         let buttonsContainer = document.getElementById("buttonContainer")
         let startButton = document.getElementById("startButton")
         let inputContainer = document.getElementById("inputContainer")
+        let voiceContainer = document.getElementById("voiceContainer")
         inputContainer.style.display = "none"
         startButton.style.display = "none"
+        voiceContainer.style.display = "none"
 
         let pauseButton = document.createElement("div")
         pauseButton.classList.add("button")
