@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loup Garou pour une nuit</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;700&family=Geologica:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Loup Garou pour une nuit</h1>
+
+<h2>Sélectionnez les personnages</h2>
+<main>
+    <div id="selectContainer">
+    </div>
+
+    <div id="inputContainer">
+        <label for="characterCounterInput">Indiquez le nombre de secondes par personnages</label>
+        <input id="characterCounterInput" type="number" value="6" placeholder="6 secondes" min="3" max="10" step="1" />
+    </div>
+
+    <div id="voiceContainer">
+        <label for="voiceSelect">Selectionner une voix</label>
+        <select id="voiceSelect"></select>
+    </div>
+
+    <div id="buttonContainer">
+        <div id="startButton" class="button">COMMENCER</div>
+    </div>
+</main>
+
+<script src="static/tts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+
+</body>
+</html>

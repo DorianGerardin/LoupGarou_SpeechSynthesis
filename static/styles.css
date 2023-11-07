@@ -1,0 +1,217 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Geologica', sans-serif;;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    background: radial-gradient(at 18% 99%, #2c2d31 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 97% 8%, #5f7784 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 79% 82%, #525659 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 96% 10%, #e6d43a 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 42% 20%, #afa644 0px, transparent 50%) fixed 0% 0%, radial-gradient(at 4% 49%, #20283f 0px, transparent 50%) fixed 0% 0%, rgba(0, 0, 0, 0) radial-gradient(at 57% 33%, #000000 0px, #3b5678 50%) fixed 0% 0%;
+
+}
+
+h1,h2,h3 {
+    text-align: center;
+    padding: 0.5em 0.5em;
+}
+
+main {
+    height: 100%;
+    margin-bottom: 2em;
+    row-gap: 1.5em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 65em;
+}
+
+select, textarea, button {
+    margin: 10px;
+}
+
+#selectContainer {
+    row-gap: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#charactersMultiSelect {
+    width: 25%;
+    height: 12em;
+}
+
+.characterCard {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    text-align: center;
+    border-radius: 0.4em;
+    font-size: 2em;
+    padding: 1.5em 0.2em;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    word-break: break-all;
+    color: wheat;
+
+    transition: opacity 0.2s, scale 0.2s;
+    opacity: 0.5;
+    box-shadow: 0px 10px 13px -7px #1c3630, 5px 5px 15px 5px rgba(0,0,0,0);
+
+    background: rgb(58,103,92);
+    background: -moz-radial-gradient(circle, rgba(58,103,92,1) 0%, rgba(48,89,91,1) 25%, rgba(56,86,87,1) 50%, rgba(42,72,77,1) 75%, rgba(16,48,49,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(58,103,92,1) 0%, rgba(48,89,91,1) 25%, rgba(56,86,87,1) 50%, rgba(42,72,77,1) 75%, rgba(16,48,49,1) 100%);
+    background: radial-gradient(circle, rgba(58,103,92,1) 0%, rgba(48,89,91,1) 25%, rgba(56,86,87,1) 50%, rgba(42,72,77,1) 75%, rgba(16,48,49,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3a675c",endColorstr="#103031",GradientType=1);
+}
+
+.characterCard:hover {
+    cursor: pointer;
+    scale: 1.02;
+}
+
+.characterCard.selected {
+    opacity: 1;
+}
+
+label {
+    color: wheat;
+    text-align: center;
+    width: 50%;
+}
+
+#inputContainer {
+    font-size: 1.5em;
+    color: wheat;
+    row-gap: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#characterCounterInput {
+    padding-left: 0.5em;
+    border-radius: 0.25em;
+    background-color: wheat;
+    color: black;
+    width: 30%;
+    height:3em;
+    font-size: 1em;
+    border: none;
+    box-shadow: 0px 10px 13px -7px #1c3630, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#characterCounterInput:focus {
+    outline: none;
+}
+
+#voiceContainer {
+    font-size: 1.5em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#voiceSelect {
+    width: 30%;
+    background-color: wheat;
+    border-radius: 0.25em;
+    height:3em;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    width: 100%;
+}
+
+.button {
+    transition: scale 0.35s;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0.4em;
+    width: 30%;
+    padding: 1em 0.2em;
+
+    background: rgb(191,185,101);
+    background: -moz-radial-gradient(circle, rgba(191,185,101,1) 33%, rgba(189,177,48,1) 67%, rgba(230,212,58,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(191,185,101,1) 33%, rgba(189,177,48,1) 67%, rgba(230,212,58,1) 100%);
+    background: radial-gradient(circle, rgba(191,185,101,1) 33%, rgba(189,177,48,1) 67%, rgba(230,212,58,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bfb965",endColorstr="#e6d43a",GradientType=1);
+}
+
+.button:hover {
+    scale: 1.05;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    main {
+        width: 95%;
+    }
+    label {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    main {
+        width: 92%;
+    }
+    .characterCard {
+        font-size: 1.5em;
+        padding: 1.75em 0.2em;
+    }
+    .button {
+        width: 50%;
+        font-size: 1.5em;
+    }
+    #characterCounterInput {
+        width: 50%;
+    }
+    label {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 92%;
+    }
+    .characterCard {
+        width: 45%;
+        font-size: 1em;
+        padding: 2em 0.2em;
+    }
+    .button {
+        width: 100%;
+        font-size: 1.25em;
+    }
+    label {
+        text-align: left;
+        width: 55%;
+    }
+    #characterCounterInput {
+        width: 35%;
+    }
+    #inputContainer {
+        column-gap: 0.5em;
+        font-size: 1em;
+    }
+    #voiceContainer {
+        column-gap: 0.5em;
+        font-size: 1em;
+    }
+}
