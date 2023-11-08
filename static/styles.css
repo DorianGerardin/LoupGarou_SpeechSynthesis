@@ -36,10 +36,6 @@ main {
     width: 65em;
 }
 
-select, textarea, button {
-    margin: 10px;
-}
-
 #selectContainer {
     row-gap: 1em;
     display: flex;
@@ -106,12 +102,12 @@ label {
 #characterCounterInput {
     padding-left: 0.5em;
     border-radius: 0.25em;
-    background-color: wheat;
-    color: black;
+    background-color: transparent;
+    color: wheat;
     width: 30%;
-    height:3em;
+    height: 3em;
     font-size: 1em;
-    border: none;
+    border: 3px #3a675c solid;
     box-shadow: 0px 10px 13px -7px #1c3630, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
@@ -128,10 +124,19 @@ label {
 }
 
 #voiceSelect {
-    width: 30%;
-    background-color: wheat;
+    font-size: 1em;
+    width: 31.75%;
+    background-color: transparent;
     border-radius: 0.25em;
-    height:3em;
+    height: 3em;
+    border: 3px #3a675c solid;
+    color: wheat;
+    box-shadow: 0px 10px 13px -7px #1c3630, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#voiceSelect:focus {
+    background: #3a675c;
+    outline: none;
 }
 
 #buttonContainer {
@@ -143,12 +148,12 @@ label {
 
 .button {
     transition: scale 0.35s;
-    font-size: 2em;
+    font-size: 1.85em;
     font-weight: bold;
     text-align: center;
     border-radius: 0.4em;
     width: 30%;
-    padding: 1em 0.2em;
+    padding: 0.9em 0.2em;
 
     background: rgb(191,185,101);
     background: -moz-radial-gradient(circle, rgba(191,185,101,1) 33%, rgba(189,177,48,1) 67%, rgba(230,212,58,1) 100%);
@@ -186,6 +191,9 @@ label {
     #characterCounterInput {
         width: 50%;
     }
+    #voiceSelect {
+        width: 52.75%;
+    }
     label {
         width: 55%;
     }
@@ -210,6 +218,9 @@ label {
     }
     #characterCounterInput {
         width: 35%;
+    }
+    #voiceSelect {
+        width: 38.2%;
     }
     #inputContainer {
         column-gap: 0.5em;

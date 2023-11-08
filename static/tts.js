@@ -145,7 +145,6 @@ if ('speechSynthesis' in window) {
     function setSpeech() {
         const selectedVoice = voiceSelect.value;
         remainingCharacters = selectedCharacters.sort((c1, c2) => { return c1[2] - c2[2] })
-        console.log(remainingCharacters)
         if(remainingCharacters.length < 3) {
             alert("Veuillez sélectionner au moins 3 personnages")
             return
@@ -153,6 +152,10 @@ if ('speechSynthesis' in window) {
         secondsPerCharacters = parseInt(document.getElementById("characterCounterInput").value)
         if(!secondsPerCharacters) {
             alert("Veuillez spécifier un nombre de seconde par personnages")
+            return
+        }
+        if(secondsPerCharacters < 3 || secondsPerCharacters > 10) {
+            alert("10 secondes max par personnages")
             return
         }
         const voices = synth.getVoices();
@@ -173,7 +176,9 @@ if ('speechSynthesis' in window) {
             countdown(3).then((result) => {
                 utterance = speak("Le village s'endort");
                 utterance.addEventListener("end", () => {
-                    resolveNextCharacter()
+                    countdown(2, false).then((result) => {
+                        resolveNextCharacter()
+                    })
                 })
             })
         })
@@ -184,6 +189,14 @@ if ('speechSynthesis' in window) {
             isPlaying = false
             console.log("resolved all characters")
             let utterance = speak("Le village se réveille");
+            utterance.addEventListener("end", () => {
+                countdown(1, false).then((result) => {
+                    utterance = speak("Faites la bonne décision, bonne chance !");
+                    utterance.addEventListener("end", () => {
+                        window.location.reload()
+                    })
+                })
+            })
             return
         }
 
@@ -194,7 +207,7 @@ if ('speechSynthesis' in window) {
                 countdown(secondsPerCharacters).then((result) => {
                     utterance = speak(`${nextCharacter[0]} ${nextCharacter[1]} se ${nextCharacter[0] === "Les" ? "rendorment" : "rendort"}`);
                     utterance.addEventListener("end", () => {
-                        countdown(1, false).then((result) => {
+                        countdown(2, false).then((result) => {
                             resolveNextCharacter()
                         })
                     })
